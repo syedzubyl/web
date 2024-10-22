@@ -1,55 +1,42 @@
-<!doctype html>
-<html lang="en-US">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Shopping Cart</title>
-<script src="Storage.js"></script>
-<link rel="stylesheet" href="cart.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-
-free@6.4.2/css/fontawesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="cart.css">
 </head>
 <body>
-<div class ="container">
-<h1>Shopping</h1>
-<div class ="cart">
-<div class ="Products">
-<div class="product">
-<img src="shoes.jpeg">
-<div class="Product-info">
-<h3 class="product-name">New Shoes</h3>
-<h2 class="product-price">1000</h2>
-<h2 class="product-offer">50%</h2>
-<p class="product-qty">qty:<input value="1" name="">
-<p class="product-remove">
-<i class="fa fa-trash" aria-hidden="true">
-</i>
-<span class="remove">Remove</span>
-</p>
-</div>
-</div>
-<div class="product">
-<img src="bags.jpeg">
-<div class="Product-info">
-<h3 class="product-name">New Bags</h3>
-<h2 class="product-price">2000</h2>
-<h2 class="product-offer">40%</h2>
-<p class="product-qty">qty:<input value="1" name="">
-<p class="product-remove">
-<i class="fa fa-trash" aria-hidden="true">
-</i>
-<span class="remove">Remove</span>
-</p>
-</div>
-</div>
-</div>
-24<div class ="cart-Total">
-<p><span>Total Price</span>
-<span>Rs 3000</span></p>
-<p><span>Number of items</span>
-<span>2</span></p>
-<p><span>You save</span>
-<span>Rs 1000</span></p>
-<a href="#">Proceed to checkout</a>
-</div>
-</div>
-</div>
+    <header>
+        <h1>Shopping Cart</h1>
+    </header>
+    <main>
+        <section class="products">
+            <div class="product">
+                <h2>Product 1</h2>
+                <img src="bags.jpeg" alt="Product 1">
+                <p>Price: $10.00</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <h2>Product 2</h2>
+                <img src="shoes.jpeg" alt="Product 2">
+                <p>Price: $15.00</p>
+                <button>Add to Cart</button>
+            </div>
+        </section>
+        <aside class="cart">
+            <h2>Your Cart</h2>
+            <p>No items in your cart.</p>
+            <div class="billing">
+                <h3>Total: $0.00</h3>
+                <button class="checkout">Checkout</button>
+                <button class="buy">Buy Now</button>
+            </div>
+        </aside>
+    </main>
+    <footer>
+        <p>&copy; 2024 Shopping Cart. All rights reserved.</p>
+    </footer>
 </body>
+</html>
