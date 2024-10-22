@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Registration Form</title>
+    <script type='text/javascript'>
+        function formValidation() {
+            var uid = document.form1.userid;
+            var uname = document.form1.username;
+            var uemail = document.form1.email;
+            var uzip = document.form1.zip;
+            var uadd = document.form1.address;
+            var umsex = document.form1.msex;
+            var ufsex = document.form1.fsex;
+
+            // Validate each field
+            if (uid.value.trim() === "") {
+                alert("User ID cannot be empty");
+                uid.focus();
+                return false;
+            }
+            if (uname.value.trim() === "") {
+                alert("Name cannot be empty");
+                uname.focus();
+                return false;
+            }
+            if (!validateEmail(uemail.value)) {
+                alert("You have entered an invalid email address!");
+                uemail.focus();
+                return false;
+            }
+            if (!/^[0-9]+$/.test(uzip.value)) {
+                alert("ZIP Code must be numeric only");
+                uzip.focus();
+                return false;
+            }
+            if (uadd.value.trim() === "") {
+                alert("Address cannot be empty");
+                uadd.focus();
+                return false;
+            }
+            if (!umsex.checked && !ufsex.checked) {
+                alert("Please select your gender");
+                return false;
+            }
+
+            // Show success message
+            document.getElementById("success-message").style.display = "block";
+            return false; // Prevent form submission
+        }
+
+        function validateEmail(email) {
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            return mailformat.test(email);
+        }
+    </script>
+    <style>
+        #success-message {
+            display: none;
+            color: green;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Registration Form</h2>
+    <form name='form1' onsubmit='return formValidation()'>
+        <table width="300" cellpadding="3" style="border-collapse: collapse;">
+            <tr>
+                <td>User ID</td>
+                <td><input type="text" name="userid" size="20" /></td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" name="username" size="20" /></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="text" name="email" size="20" /></td>
+            </tr>
+            <tr>
+                <td>ZIP Code</td>
+                <td><input type="text" name="zip" size="20" /></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><textarea name="address" rows="4" cols="20"></textarea></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>
+                    <input type="radio" name="msex" value="Male" /> Male
+                    <input type="radio" name="fsex" value="Female" /> Female
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="Submit" /></td>
+            </tr>
+        </table>
+    </form>
+    <div id="success-message">Successfully registered!</div>
+</body>
+</html>
